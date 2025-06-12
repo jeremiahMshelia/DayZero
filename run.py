@@ -1,14 +1,16 @@
+# run.py
+
 import os
 from app.main import app, current_signal
 from app.scheduler import start_scheduler
 
-# ✅ TEMP: Force a test signal for MT5 EA polling
-current_signal["signal"] = "buy_USTECm"
+# Removed test signal injection for live trading
+# current_signal["signal"] = "buy_USTECm"
 
 if __name__ == "__main__":
-    # 🧠 Start time-based job scheduler
+    print("[CORE] Scheduler starting...")
     start_scheduler()
 
-    # 🌐 Launch Flask API server on port 5050
+    print("[CORE] Launching Flask server...")
     port = int(os.environ.get("PORT", 5050))
-    app.run(host='0.0.0.0', port=port)
+    app.run(host="0.0.0.0", port=port)
