@@ -10,6 +10,14 @@ app = Flask(__name__)
 current_signal = {"signal": "none"}
 latest_candles = {}
 
+@app.route('/', methods=['GET'])
+def index():
+    """A simple welcome message for the root endpoint."""
+    return jsonify({
+        "message": "Welcome to the DayZero API. The service is running.",
+        "status_url": "/status"
+    })
+
 @app.route('/status', methods=['GET'])
 def get_status():
     return jsonify({
