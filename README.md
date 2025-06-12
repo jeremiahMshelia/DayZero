@@ -63,5 +63,3 @@ You will run a custom EA inside MT5 to:
 # In project root
 source venv/bin/activate
 python run.py
-
-so
