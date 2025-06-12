@@ -3,7 +3,4 @@ services:
     name: dayzero-api
     env: python
     buildCommand: ""
-    startCommand: python run.py
-    envVars:
-      - key: PORT
-        value: 5050 
+    startCommand: python run.py 
